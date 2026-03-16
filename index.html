@@ -124,40 +124,6 @@ display:none;
 font-size:2.8rem;
 margin-top:20px;
 }
-
-  #overlay{
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:9999;
-opacity:0;
-pointer-events:none;
-transition:1s;
-text-align:center;
-}
-
-#overlayGif{
-position:absolute;
-width:75%;
-height:75%;
-object-fit:cover;
-}
-
-#overlayText{
-position:relative;
-color:white;
-font-size:4rem;
-font-weight:700;
-text-shadow:0 0 20px black;
-text-align:center;
-}
   
 </style>
   
@@ -239,7 +205,7 @@ setTimeout(()=>t.remove(),1200)
 
 /* COUNTDOWN */
 
-const target=new Date("April 04, 2026 00:00:00").getTime()
+const target=new Date("March 16, 2026 00:00:00").getTime()
 
 setInterval(()=>{
 let now=new Date().getTime()
@@ -276,8 +242,3 @@ document.getElementById("countdown").innerHTML=
 
 </body>
 </html>
-
-<div id="overlay">
-    <img src="/Bday/IMG_7728.webp" id="overlayGif">
-    <div id="overlayText">🎉 HAPPY BIRTHDAY PUKYY!! 🎉</div>
-</div>
