@@ -1,206 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Countdown 2026! 🦄</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --minion-yellow: #FFEF00;
-            --agnes-pink: #FF85A2;
-            --denim: #2B59C3;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pukyyy Ka Buddayyyy 😆 </title>
 
-        body {
-            background-color: var(--agnes-pink);
-            background-image: radial-gradient(var(--minion-yellow) 20%, transparent 20%),
-                              radial-gradient(var(--minion-yellow) 20%, transparent 20%);
-            background-position: 0 0, 50px 50px;
-            background-size: 100px 100px;
-            font-family: 'Fredoka One', cursive;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-        .main-card {
-            background: white;
-            border-radius: 40px;
-            padding: 40px;
-            box-shadow: 0 20px 0 rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 90%;
-            border: 8px solid var(--denim);
-            position: relative;
-        }
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-        .gif-container img {
-            width: 100%;
-            max-width: 250px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
+<style>
 
-        .countdown-display {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
-        }
+body{
+margin:0;
+font-family:"Poppins", sans-serif;
+background: linear-gradient(180deg,#ffe45c,#ffd400);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#333;
+}
 
-        .time-segment {
-            background: var(--denim);
-            color: white;
-            padding: 10px;
-            border-radius: 15px;
-        }
+/* CARD */
 
-        .time-segment div { font-size: 1.8rem; }
-        .time-segment span { font-size: 0.7rem; font-family: 'Open Sans'; text-transform: uppercase; }
+.card{
+background:white;
+padding:40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 30px 70px rgba(0,0,0,.25);
+max-width:640px;
+width:92%;
+position:relative;
+}
 
-        .daily-message {
-            background: #fff0f3;
-            border-radius: 20px;
-            padding: 15px;
-            margin-bottom: 20px;
-            color: #d63384;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: bold;
-        }
+/* REAL MINIONS */
 
-        .button-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-            position: relative;
-        }
+.minionsReal{
+width:260px;
+animation:minionBounce 2.5s infinite;
+}
 
-        .btn {
-            padding: 15px 30px;
-            border-radius: 50px;
-            border: none;
-            font-family: 'Fredoka One';
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+@keyframes minionBounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
 
-        #yes-btn { background: #4CAF50; color: white; box-shadow: 0 5px 0 #2e6b31; }
-        #no-btn { background: #f44336; color: white; box-shadow: 0 5px 0 #b71c1c; position: absolute; left: 60%; }
+/* REAL AGNES */
 
-        .music-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: white;
-            border: 3px solid var(--denim);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            font-size: 24px;
-        }
-    </style>
+.agnesReal{
+position:absolute;
+right:-30px;
+bottom:-10px;
+width:140px;
+animation:agnesFloat 3s infinite;
+}
+
+@keyframes agnesFloat{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-8px)}
+}
+
+/* COUNTDOWN */
+
+#countdown{
+font-size:2rem;
+margin:15px 0;
+font-weight:600;
+}
+
+/* DAILY */
+
+.daily{
+font-size:1.1rem;
+color:#1565c0;
+margin-top:6px;
+}
+
+/* CHAOS */
+
+.chaos{
+position:absolute;
+font-size:26px;
+font-weight:700;
+color:#0057ff;
+animation:pop 1.2s forwards;
+}
+
+@keyframes pop{
+from{transform:scale(.3);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+
+button{
+margin-top:18px;
+padding:12px 24px;
+border:none;
+border-radius:999px;
+background:#1565c0;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+/* FINAL */
+
+.final{
+display:none;
+font-size:2.8rem;
+margin-top:20px;
+}
+
+</style>
 </head>
+
 <body>
 
-    <button class="music-toggle" onclick="toggleMusic()">🎵</button>
-    <audio id="bday-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
+<audio id="music" loop preload="auto">
+<source src="/Minions/audio_9c0f3bb6d4.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="main-card">
-        <div class="gif-container">
-            <img id="main-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW9mZ3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/11S7aQol2mdPUI/giphy.gif" alt="Agnes Happy">
-        </div>
+<div class="card">
 
-        <h1 style="color: var(--denim); margin-bottom: 10px;">Are you excited?!</h1>
-        
-        <div class="daily-message" id="daily-text">
-            Checking for today's surprise...
-        </div>
+<img src="/Minions/IMG_7724.webp" class="minionsReal">
 
-        <div class="countdown-display">
-            <div class="time-segment"><div id="days">00</div><span>Days</span></div>
-            <div class="time-segment"><div id="hours">00</div><span>Hrs</span></div>
-            <div class="time-segment"><div id="mins">00</div><span>Mins</span></div>
-            <div class="time-segment"><div id="secs">00</div><span>Secs</span></div>
-        </div>
+<img src="IMG_7721.gif" class="agnesReal">
 
-        <div class="button-group" style="height: 60px;">
-            <button id="yes-btn" class="btn" onclick="celebrate()">YES! 🍌</button>
-            <button id="no-btn" class="btn" onmouseover="moveNoButton()">Not yet...</button>
-        </div>
-    </div>
+<h1>Birthday Countdown </h1>
 
-    <script>
-        // Target Date: April 4, 2026
-        const target = new Date("April 4, 2026 00:00:00").getTime();
+<div id="countdown"></div>
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const diff = target - now;
-            document.getElementById('days').innerText = Math.floor(diff / (86400000));
-            document.getElementById('hours').innerText = Math.floor((diff % 86400000) / 3600000);
-            document.getElementById('mins').innerText = Math.floor((diff % 3600000) / 60000);
-            document.getElementById('secs').innerText = Math.floor((diff % 60000) / 1000);
-        }
-        setInterval(updateCountdown, 1000);
+<div class="daily" id="daily"></div>
 
-        // Daily Content Logic
-        const surprises = [
-            "Today's Fact: Minions love bananas! 🍌",
-            "Agnes says: You look as fluffy as a unicorn today!",
-            "Did you know? Minions have their own language!",
-            "Countdown Tip: Start planning the party hats!",
-            "Fun Fact: Agnes's unicorn is named 'Fluffy'!"
-        ];
-        document.getElementById('daily-text').innerText = surprises[new Date().getDate() % surprises.length];
+<button onclick="chaos()">Tap for Minion Chaos</button>
 
-        // Interactive "No" Button
-        let noClicks = 0;
-        function moveNoButton() {
-            const noBtn = document.getElementById('no-btn');
-            const yesBtn = document.getElementById('yes-btn');
-            
-            // Make the yes button bigger each time!
-            const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-            yesBtn.style.fontSize = (currentSize + 2) + "px";
-            yesBtn.style.padding = "20px 40px";
+<div class="final" id="final">🎉 HAPPYY BIRTHDAY MY ONE IN A MINION PAYAL MAHESHWARI!! 🎉</div>
 
-            // Move the no button randomly
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 100);
-            noBtn.style.position = 'fixed';
-            noBtn.style.left = x + 'px';
-            noBtn.style.top = y + 'px';
-            
-            const texts = ["Are you sure?", "Wait!", "Bello?", "Banana??", "It's so fluffy!"];
-            noBtn.innerText = texts[Math.floor(Math.random() * texts.length)];
-        }
+</div>
 
-        function celebrate() {
-            document.getElementById('main-gif').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW9mZ3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4Z3F4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/mP8u8V0Q5PZkY/giphy.gif";
-            alert("YAY! The Minions are getting the party ready!");
-        }
+<script>
 
-        function toggleMusic() {
-            const audio = document.getElementById('bday-music');
-            if (audio.paused) {
-                audio.play();
-                document.querySelector('.music-toggle').innerText = "⏸️";
-            } else {
-                audio.pause();
-                document.querySelector('.music-toggle').innerText = "🎵";
-            }
-        }
-    </script>
+/* MUSIC */
+
+const music=document.getElementById("music")
+document.body.addEventListener("click",()=>music.play(),{once:true})
+
+/* DAILY MESSAGES */
+
+const messages=[
+"Minions preparing banana cake 🍌",
+"Agnes approved today's cuteness",
+"Gru scheduled party protocol",
+"Kevin inflating balloons",
+"Bob ate cake sample",
+"Banana stock rising",
+"Minion dance rehearsal ongoing",
+"Party chaos inevitable",
+"Birthday happiness loading",
+"Minion excitement increasing"
+]
+
+document.getElementById("daily").innerText=
+messages[Math.floor(Math.random()*messages.length)]
+
+/* CHAOS TEXT */
+
+const words=[
+"BELLO!!",
+"BANANAAAA!!",
+"POOPAYE!!",
+"TATATA!!",
+"BEE DO BEE DO!!",
+"TULALILOO!!",
+"HAHAHAHA!!",
+"YAYYYYY!!"
+]
+
+function chaos(){
+confetti({particleCount:120,spread:100})
+
+let t=document.createElement("div")
+t.className="chaos"
+t.innerText=words[Math.floor(Math.random()*words.length)]
+t.style.left=Math.random()*80+"vw"
+t.style.top=Math.random()*70+"vh"
+document.body.appendChild(t)
+
+setTimeout(()=>t.remove(),1200)
+}
+
+/* COUNTDOWN */
+
+const target=new Date("March 16, 2026 00:00:00").getTime()
+
+setInterval(()=>{
+let now=new Date().getTime()
+let diff=target-now
+
+if(diff<=0){
+
+document.getElementById("countdown").style.display="none"
+document.getElementById("final").style.display="block"
+
+confetti({particleCount:600,spread:200})
+confetti({particleCount:600,spread:200})
+
+return
+}
+
+let d=Math.floor(diff/86400000)
+let h=Math.floor(diff%86400000/3600000)
+let m=Math.floor(diff%3600000/60000)
+let s=Math.floor(diff%60000/1000)
+
+document.getElementById("countdown").innerHTML=
+`${d}d ${h}h ${m}m ${s}s`
+
+},1000)
+
+</script>
+
 </body>
 </html>
