@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pukyyy Ka Buddayy 😎 </title>
+let clickCount = 0;
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -124,6 +125,28 @@ display:none;
 font-size:2.8rem;
 margin-top:20px;
 }
+
+#chaosOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+opacity:0;
+pointer-events:none;
+transition:0.5s;
+}
+
+#chaosGif{
+width:50%;
+height:50%;
+object-fit:cover;
+}
   
 </style>
   
@@ -190,16 +213,39 @@ const words=[
 ]
 
 function chaos(){
-confetti({particleCount:120,spread:100})
 
-let t=document.createElement("div")
-t.className="chaos"
-t.innerText=words[Math.floor(Math.random()*words.length)]
-t.style.left=Math.random()*80+"vw"
-t.style.top=Math.random()*70+"vh"
-document.body.appendChild(t)
+// ⭐ count clicks
+clickCount++;
 
-setTimeout(()=>t.remove(),1200)
+// ✅ ORIGINAL CHAOS (unchanged)
+confetti({particleCount:120,spread:100});
+
+let t=document.createElement("div");
+t.className="chaos";
+t.innerText=words[Math.floor(Math.random()*words.length)];
+t.style.left=Math.random()*80+"vw";
+t.style.top=Math.random()*70+"vh";
+document.body.appendChild(t);
+
+setTimeout(()=>t.remove(),1200);
+
+// ⭐ EXTRA EASTER EGG (only every 100th click)
+if(clickCount % 10 === 0){
+
+confetti({particleCount:400,spread:180}); // bonus blast 😏
+
+const overlay = document.getElementById("chaosOverlay");
+
+overlay.style.opacity = "1";
+overlay.style.pointerEvents = "auto";
+
+setTimeout(()=>{
+overlay.style.opacity = "0";
+overlay.style.pointerEvents = "none";
+},2500);
+
+}
+
 }
 
 /* COUNTDOWN */
@@ -238,6 +284,10 @@ document.getElementById("countdown").innerHTML=
 },1000)
 
 </script>
-
+  
+<div id="chaosOverlay">
+    <img src="./chaos.gif" id="chaosGif">
+</div>
+  
 </body>
 </html>
