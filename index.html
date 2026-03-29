@@ -154,22 +154,22 @@ object-fit:cover;
 <body>
 
 <audio id="music" loop preload="auto">
-<source src="/Bday/Riha.mp3" type="audio/mpeg">
+<source src="/Bday/Baby.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
 
-<img src="/Bday/IMG_7768.webp" class="minionsReal">
+<img src="/Bday/IMG_7774.webp" class="minionsReal">
 
-<img src="/Bday/IMG_3373.png" class="agnesReal">
+<img src="/Bday/miai_bg_remover-1774795672707.mp4" class="agnesReal">
 
-<h1>LOML Ka Birthday ❤️</h1>
+<h1>Clumsy Countdown 😆</h1>
 
 <div id="countdown"></div>
 
 <div class="daily" id="daily"></div>
 
-<button onclick="chaos()">Let's kiss 😚</button>
+<button onclick="chaos()">Ouch!</button>
 
 <div class="final" id="final">🎉 HAPPYY BIRTHDAY PUKYY!! 🎉</div>
 
@@ -187,7 +187,7 @@ document.body.addEventListener("click",()=>music.play(),{once:true})
 /* DAILY MESSAGES */
 
 const messages=[
-"Alag aasmaan bhi hai toh kya? 🤷🏻‍♂️"
+"I fall for you, just like you fall for the table corners 😜"
 ]
 
 document.getElementById("daily").innerText=
@@ -196,21 +196,21 @@ messages[Math.floor(Math.random()*messages.length)]
 /* CHAOS TEXT */
 
 const words=[
-"Pukyyyy ❤️",
-"Motuzzooooo",
-"Girgit 🦎",
-"SnakeyPoop 🐍💩",
-"Pukirgit 🤮🦎",
-"Poop & Puke ❤️",
-"Team Dimsums 🥟",
-"Untt & Lawyenn",
-"LOML 💎",
-"Mela chota babu 😆",
-"TOPPER",
-"28/03/2020",
-"Gibberish 😝",
-"Ocean 🌊",
-"Dimmo"
+"Table se lag gayi",
+"Diwar se takra gayi",
+"Sir table se takra gaya",
+"Cut pad gaya",
+"Toe se khoon aa raha hai 🥺",
+"Okay not biting nails",
+"Tasty nails 🤤",
+"Laptop table pe rakh do 😴",
+"Commode se gir gayi",
+"Phone gir gaya",
+"Kadhai se jal gayi",
+"Machar ne pappi leli 😟",
+"Fadofy 😟",
+"Oops khikhi",
+"Galti se 4 packet kha gayi"
 ]
 
 function chaos(){
@@ -231,7 +231,7 @@ document.body.appendChild(t);
 setTimeout(()=>t.remove(),1200);
 
 // ⭐ EXTRA EASTER EGG (only every 100th click)
-if(clickCount % 50 === 0){
+if(clickCount % 5000 === 0){
 
 confetti({particleCount:400,spread:180}); // bonus blast 😏
 
