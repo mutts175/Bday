@@ -154,22 +154,22 @@ object-fit:cover;
 <body>
 
 <audio id="music" loop preload="auto">
-<source src="/Bday/Pagal.mp3" type="audio/mpeg">
+<source src="/Bday/Minion.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
 
-<img src="/Bday/IMG_7779.webp" class="minionsReal">
+<img src="/Bday/IMG_7782.webp" class="minionsReal">
 
-<img src="/Bday/IMG_3415.png" class="agnesReal">
+<img src="/Bday/IMG_7721.gif" class="agnesReal">
 
-<h1>(April) Fool's Day 😌</h1>
+<h1>2 Days For My Minion's Day 😆</h1>
 
 <div id="countdown"></div>
 
 <div class="daily" id="daily"></div>
 
-<button onclick="chaos()">Khi khi khi</button>
+<button onclick="chaos()">Pretty Please?</button>
 
 <div class="final" id="final">🎉 HAPPYY BIRTHDAY PUKYY!! 🎉</div>
 
@@ -187,7 +187,7 @@ document.body.addEventListener("click",()=>music.play(),{once:true})
 /* DAILY MESSAGES */
 
 const messages=[
-"Ever since I met you, my heart is fool 😜"
+"For you I would steal the moon 😌"
 ]
 
 document.getElementById("daily").innerText=
@@ -196,31 +196,29 @@ messages[Math.floor(Math.random()*messages.length)]
 /* CHAOS TEXT */
 
 const words=[
-"Fool",
-"TOPPER",
-"Dimmo 😚",
-"Sandeele ki laddu",
-"Pagal Payal",
-"Sweetie 🍭",
-"LOML ❤️",
-"Don 😎",
-"Dimmi",
-"Dimsum 🥟",
-"Cutie πL",
-"Ghonchu",
-"Brmo",
-"Dear 😝",
-"Jaanu 😆",
-"Payal Maheshwari",
-"Pukirgit 🤮🦎",
-"Smarty",
-"Nerd",
-"Buddhu",
-"Motuuuuu",
-"Meri bandi 😎",
-"Girlie 💅",
-"Sweet sugar 😋",
-"Mela chota babu 👶🏻"
+"BELLO",
+"BANANAAAA!",
+"WHAAT??",
+"Tulaliloo ti amo!!",
+"BEE-DO BEE-DO POLICE!!",
+"Por smoochie smoochie? 😚",
+"Agnes",
+"Pretty please? 🥺",
+"It's so fluffy!!!"
+"Does this count as annoying? 😝",
+"Underwearrr",
+"Aa panirtikamasala",
+"Stoppaaa",
+"One in a minion",
+"Uh oh",
+"Can I keep it? 🥺👉👈",
+"Steal the moon",
+"Illuminatioooon",
+"Blehh",
+"Gru"
+]
+
+function chaos(){
 ]
 
 function chaos(){
@@ -241,7 +239,7 @@ document.body.appendChild(t);
 setTimeout(()=>t.remove(),1200);
 
 // ⭐ EXTRA EASTER EGG (only every 100th click)
-if(clickCount % 5000 === 0){
+if(clickCount % 50 === 0){
 
 confetti({particleCount:400,spread:180}); // bonus blast 😏
 
@@ -297,7 +295,7 @@ document.getElementById("countdown").innerHTML=
 </script>
   
 <div id="chaosOverlay">
-    <img src="./IMG_3374.jpeg" id="chaosGif">
+    <img src="./IMG_7781.jpeg" id="chaosGif">
 </div>
   
 </body>
