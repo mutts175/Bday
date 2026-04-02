@@ -288,7 +288,7 @@ document.body.appendChild(t);
 setTimeout(()=>t.remove(),1200);
 
 // ⭐ EXTRA EASTER EGG (only every 100th click)
-if(clickCount % 50 === 0){
+if(clickCount % 5000 === 0){
 
 confetti({particleCount:400,spread:180}); // bonus blast 😏
 
@@ -308,7 +308,7 @@ overlay.style.pointerEvents = "none";
 
 /* COUNTDOWN */
 
-const target=new Date("April 04, 2026 00:00:00").getTime()
+const target=new Date("April 02, 2026 23:10:00").getTime()
 
 setInterval(()=>{
 let now=new Date().getTime()
