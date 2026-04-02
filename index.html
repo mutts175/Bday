@@ -21,6 +21,10 @@ display:flex;
 justify-content:center;
 align-items:center;
 color:#333;
+
+opacity:0;
+transition:opacity 0.4s ease;
+  
 }
 
 /* CARD */
@@ -333,6 +337,10 @@ document.getElementById("countdown").innerHTML=
 `${d}d ${h}h ${m}m ${s}s`
 
 },1000)
+
+  window.addEventListener("load", () => {
+document.body.style.opacity = "1";
+});
 
 </script>
   
