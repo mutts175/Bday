@@ -146,6 +146,51 @@ width:50%;
 height:50%;
 object-fit:cover;
 }
+
+#overlay{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:transparent;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10000;
+opacity:0;
+pointer-events:none;
+transition:1s;
+}
+
+#overlayGif{
+width:50vw;
+max-width:500px;
+height:auto;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,0.3);
+animation:popIn 0.8s ease;
+}
+
+#overlayText{
+margin-top:20px;
+color:#333;
+font-size:2.5rem;
+font-weight:800;
+text-align:center;
+}
+
+@keyframes popIn{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
   
 </style>
   
@@ -297,7 +342,7 @@ document.getElementById("countdown").innerHTML=
 
   <div id="overlay">
     <img src="./IMG_7785.webp" id="overlayGif">
-    <div id="overlayText">HAPPY BIRTHDAY PUKYY!! 🎉</div>
+    <div id="overlayText">HAPPY BIRTHDAYY PUKYYY!! 🎉❤️</div>
 </div>
   
 </body>
