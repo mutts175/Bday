@@ -22,7 +22,6 @@ justify-content:center;
 align-items:center;
 color:#333;
 
-visibility:hidden;
   
 }
 
@@ -38,7 +37,10 @@ max-width:640px;
 width:92%;
 position:relative;
 
-opacity:1;
+visibility:hidden;
+opacity:0;
+transform:translateY(10px);
+transition:opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* REAL MINIONS */
@@ -336,8 +338,11 @@ document.getElementById("countdown").innerHTML=
 
 },1000)
 
-  window.addEventListener("load", () => {
-document.body.style.opacity = "visible";
+ window.addEventListener("load", () => {
+const card = document.querySelector(".card");
+card.style.visibility = "visible";
+card.style.opacity = "1";
+card.style.transform = "translateY(0)";
 });
 
 </script>
